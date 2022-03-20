@@ -1,7 +1,7 @@
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 50%;
+    width: 100%;
     border:1px solid black;
   }
   
@@ -22,4 +22,8 @@ table {
 
 .displayNone{
     display: none;
+}
+
+.marked{
+  color: red;
 }
