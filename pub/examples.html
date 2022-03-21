@@ -169,6 +169,43 @@
       </pre>
       <div id="example4" class="example">
       </div>
+
+      <p>Defining a dish summary object as below, developers can use the below function to generate a dish summary table
+        (Currently in progress)
+      </p>
+      <pre>
+        <code>
+          const exampleDSData = {
+            "partners": ["DoorDash", "Uber Eat", "Skip The Dishes"],
+            "dishes": [
+                {
+                    "name": "Small Pepperoni", "price": "25", "count": "9"
+                },
+                {
+                    "name": "Large Pepperoni", "price": "35", "count": "2"
+                },
+                {
+                    "name": "Small Hawaiian", "price": "18", "count": "2"
+                },
+                {
+                    "name": "Small Canadian", "price": "15", "count": "1"
+                }
+            ]
+        }
+        </code>
+      </pre>
+
+      <pre>
+        <code>
+          const table = f.generateDishSummary(exampleDSData, "ds1", true, true);
+
+	        document.getElementById("example5").appendChild(table)
+        </code>
+        <button class="button" id="ex5b" onclick="showEx5()">Run code</button>
+      </pre>
+      <div id="example5" class="example">
+        
+      </div>
     </div>
   </body>
 </html>

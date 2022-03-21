@@ -35,6 +35,24 @@ const exampleData = {
     ]
 }
 
+const exampleDSData = {
+    "partners": ["DoorDash", "Uber Eat", "Skip The Dishes"],
+    "dishes": [
+        {
+            "name": "Small Pepperoni", "price": "25", "count": "9"
+        },
+        {
+            "name": "Large Pepperoni", "price": "35", "count": "2"
+        },
+        {
+            "name": "Small Hawaiian", "price": "18", "count": "2"
+        },
+        {
+            "name": "Small Canadian", "price": "15", "count": "1"
+        }
+    ]
+}
+
 const newOrder = {
     "orderNum": "4",
     "dishes": [{"name": "Large Pepperoni", "price": "35", "count": "2"}],
@@ -61,6 +79,11 @@ function showEx1(){
     if(node != null){
         node.remove();
     }
+    document.getElementById("ex5b").disabled = false;
+    node = document.getElementById("example5").querySelector("#ds1");
+    if(node != null){
+        node.remove();
+    }
 
 
     const table = f.generateReport(exampleData, "report1", true);
@@ -82,6 +105,11 @@ function showEx2(){
     }
     document.getElementById("ex4b").disabled = false;
     node = document.getElementById("example4").querySelector("#report1");
+    if(node != null){
+        node.remove();
+    }
+    document.getElementById("ex5b").disabled = false;
+    node = document.getElementById("example5").querySelector("#ds1");
     if(node != null){
         node.remove();
     }
@@ -122,6 +150,11 @@ function showEx3(){
     if(node != null){
         node.remove();
     }
+    document.getElementById("ex5b").disabled = false;
+    node = document.getElementById("example5").querySelector("#ds1");
+    if(node != null){
+        node.remove();
+    }
 
 
     const table = f.generateReport(exampleData, "report1", true);
@@ -153,6 +186,11 @@ function showEx4(){
     if(node != null){
         node.remove();
     }
+    document.getElementById("ex5b").disabled = false;
+    node = document.getElementById("example5").querySelector("#ds1");
+    if(node != null){
+        node.remove();
+    }
 
     const table = f.generateReport(exampleData, "report1", true);
 	document.getElementById("example4").appendChild(table)
@@ -161,6 +199,34 @@ function showEx4(){
     f.addDish({"name": "Small Pepperoni", "price": "25", "count": "3"}, "report1", 4, false);
 
     document.getElementById("ex4b").disabled = true;
+}
+
+function showEx5(){
+    document.getElementById("ex1b").disabled = false;
+    let node = document.getElementById("example1").querySelector("#report1");
+    if(node != null){
+        node.remove();
+    }
+    document.getElementById("ex2b").disabled = false;
+    node = document.getElementById("example2").querySelector("#report1");
+    if(node != null){
+        node.remove();
+    }
+    document.getElementById("ex3b").disabled = false;
+    node = document.getElementById("example3").querySelector("#report1");
+    if(node != null){
+        node.remove();
+    }
+    document.getElementById("ex4b").disabled = false;
+    node = document.getElementById("example4").querySelector("#report1");
+    if(node != null){
+        node.remove();
+    }
+
+
+    const table = f.generateDishSummary(exampleDSData, "ds1", true, true);
+	document.getElementById("example5").appendChild(table)
+    document.getElementById("ex5b").disabled = true;
 }
 
 function createBS(){
@@ -195,6 +261,9 @@ function createBS(){
     // f.addOrder(newOrder, "report1", false, true);
 
     // f.addDish({"name": "Small Pepperoni", "price": "25", "count": "3"}, "report1", 4, false);
+
+    // const table = f.generateDishSummary(exampleDSData, "ds1", true, true);
+	// document.getElementById("example5").appendChild(table)
 
 }
 

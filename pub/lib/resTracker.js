@@ -355,6 +355,63 @@
         return count;
     }
 
+    function inputCheckBox(data, col, id, filter, sort){
+        if(filter){
+            form = document.createElement("form");
+            var sortA = ["order(most)", "order(least)", "price(richest)", "price(lowest)"];
+            sortA.forEach((name) => {
+                input = document.createElement("input");
+                input.setAttribute("type", "checkbox");
+                label = document.createElement("label");
+                label.innerHTML = name;
+                form.appendChild(input);
+                form.appendChild(label);
+                form.appendChild(document.createElement("br"));
+            });
+            form.appendChild(document.createElement("br"));
+            
+            submit = document.createElement("input");
+            submit.setAttribute("type", "submit");
+            form.appendChild(submit);
+            col.appendChild(form);
+        }
+
+        if(sort){
+            form = document.createElement("form");
+            var sortA = data;
+            sortA.forEach((name) => {
+                input = document.createElement("input");
+                input.setAttribute("type", "checkbox");
+                label = document.createElement("label");
+                label.innerHTML = name;
+                form.appendChild(input);
+                form.appendChild(label);
+                form.appendChild(document.createElement("br"));
+            });
+            form.appendChild(document.createElement("br"));
+            submit = document.createElement("input");
+            submit.setAttribute("type", "submit");
+            form.appendChild(submit);
+            col.appendChild(form);
+        }
+    }
+
+    function inputDishesTable(data, table, id){
+        let tr = document.createElement('tr');
+        const headers = [["Dish", 3], ["Price",3], ["Counts",2]];
+        for(let i=0; i < headers.length; i++){
+            let th = document.createElement('th');
+            th.setAttribute("colspan", headers[i][1]);
+            th.className = "rowHeader";
+            th.innerHTML = headers[i][0];
+            tr.appendChild(th);
+        }
+        table.appendChild(tr);
+        data.forEach((dish) => {
+            table.appendChild(addOneDish(dish));
+        });
+    }
+
     resTracker.prototype = {
 
 		generateReport: function(data, id, sub){
@@ -492,12 +549,38 @@
 
         },
 
-        exportReport: function(reportId, toSummary){
+        removeDish: function(reportId, editInfo){
+
+        },
+
+        exportReport: function(reportId, toOS, toDS){
             //return a order object
         },
 
-        generateDishSummary: function(){
+        generateDishSummary: function(data, id, filter, sort){
+            let row = document.createElement("row");
+            row.className = "row";
+            row.setAttribute("id", id);
+            let col1 = document.createElement("col");
+            col1.setAttribute("id", "selectionRow"+id); 
+            col1.className = "column";
 
+            inputCheckBox(data["partners"], col1, id, filter, sort);
+
+            let col2 = document.createElement("col");
+            col2.setAttribute("id", "dishRow"+id); 
+            col2.className = "column";
+            table = document.createElement("table");
+            table.className = "dishS";
+            tbody = document.createElement("tbody");
+
+            inputDishesTable(data["dishes"], tbody, id);
+            table.appendChild(tbody);
+            col2.appendChild(table);
+            row.appendChild(col1);
+            row.appendChild(col2);
+
+            return row;
         }
 
 	}
