@@ -1,11 +1,11 @@
-table {
+table.reportTable, table.row {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
     border:1px solid black;
   }
   
-  td, th {
+  .reportTable td, .reportTable th, .row td, .row th {
     border: 1px solid #dddddd;
     text-align: center;
     padding: 8px;
@@ -16,7 +16,7 @@ table {
     background-color: #dddddd;
   } */
 
-  button{
+  .reportTable button{
       float: right;
   }
 
@@ -48,6 +48,50 @@ form{
   margin-bottom: 3rem;
 }
 
+
 .dishS{
   margin-left: -5rem;
+}
+
+.chart table {
+  height: 400px;
+}
+
+.charttitle {
+  text-align: center;
+  padding-bottom: 2rem;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bars td {
+  vertical-align: bottom;
+}
+
+.bars div:hover {
+  opacity: 0.6;
+}
+
+.legend {
+  vertical-align: bottom;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.legbox {
+  display: block;
+  clear: both;
+}
+
+.xaxisname {
+  margin: 5px;
+  color: #fff;
+  font-size: 77%;
+  padding: 5px;
+  float: left;
 }
