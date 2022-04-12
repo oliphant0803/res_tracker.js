@@ -22,15 +22,13 @@ html, body {
     z-index: 50;
   }
 
-  header .btn-info{
+  .btn-info, .btn-info:hover, .btn-info:focus{
     background: linear-gradient(70deg, white, pink);
     color: rgb(109, 104, 104);
     font-weight: bold;
     border: none;
   }
-  header .btn-info:hover, header .btn-info:focus{
-    color: black;
-  }
+
 
   
   header .navbar-nav li a {
@@ -77,11 +75,16 @@ a:focus {
     max-width: 15rem;
     color: rgb(109, 104, 104);
     transition: all 0.3s;
-
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
 }
 
-#sidebar.active {
-    margin-left: -15rem;
+.tmp{
+    width: 5rem;
 }
 
 #sidebar ul.components {
@@ -105,6 +108,7 @@ a:focus {
 }
 
 #content {
+    margin-left: 15rem;
     width: 100%;
     padding: 2rem;
     min-height: 100vh;
@@ -140,8 +144,6 @@ pre{
     display:block;
     max-width: 40rem;
     overflow-x: auto; 
-    margin-left: auto;
-    margin-right: auto;
     background-color: #dfd5d5b7;
     white-space: normal;
   }
