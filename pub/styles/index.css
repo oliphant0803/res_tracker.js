@@ -1,82 +1,192 @@
-body {
-    font-family: "Raleway", Arial, Helvetica, sans-serif;
-    font-size: 13pt;
-    font-weight: 400;
-    line-height: 2em;
-    overflow-y:hidden;
-}
+html, body {
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
 
-
-a:hover {
-    text-decoration: none;
-    text-decoration: underline;
-}
-
-p {
-    margin: 0 0 2em 0;
-}
-
-#banner button{
-    background-color:  rgba(65, 57, 95, 0.877);
-}
-
-#banner {
-    padding: 15em 0 15em 0;
-    background: linear-gradient(70deg, white, pink);
-    line-height: 1.75;
+  p {
+    font-size: medium;
+  }
+  
+  h1 {
+    font-size: xx-large;
+    font-weight: bold;
     text-align: center;
-    height: 100vh;
-}
+    letter-spacing: .6rem;
+    text-transform: capitalize;
+  }
+  
+  header {
+    height: 6rem;
+    -webkit-box-shadow: 0 2px 3px #58585830;
+            box-shadow: 0 2px 3px #58585830;
+    z-index: 50;
+  }
 
-#banner:last-child {
-    margin-bottom: 0;
-}
+  
+  header .navbar-nav li a {
+    color: #000000;
+    font-weight: 600;
+    font-size:xx-large;
+  }
 
-#banner h2 {
-    color: rgb(150, 150, 150);
-    display: inline-block;
-    font-size: 2.5em;
-    line-height: 1.35;
-    margin-bottom: 0.5em;
-}
+  .front-section .front-container:hover ul{
+    opacity: 1;
+  }
 
-#banner p {
-    color: rgb(150, 150, 150);
-    font-size: 1em;
-    margin-bottom: 1.75em;
-}
-
-ul li {
-    padding-left: 0.5em;
-}
-
-section{
-    text-align: center;
-}
-
-ul {
+  .home ul {
     cursor: default;
     list-style: none;
     padding-left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 20rem;
+    z-index: 2;
+    opacity: 0.1;
 }
 
-#banner button a:hover{
-    color: #ccc;
+.home li{
+    margin: 0rem 1rem 0rem 1rem;
 }
 
-#banner button{
-    margin-right: 2rem;
-    margin-left: 2rem;
-    font-family: Georgia, serif;
-    font-size: 1.5rem;
-    border-radius: 10px;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-}
+.btn-ex , .btn-api{
+    border-radius: 15px;
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid rgba(255, 0, 0, 0.308);
+    outline: none;
+    transition: 1s ease-in-out;
+  }
+  
+  .btn-ex:hover, .btn-api:hover {
+    transition: 1s ease-in-out;
+    background: rgba(255, 0, 0, 0.308);
+  }
+  
+  li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+  }
 
-#banner a {
+  li a:hover{
     text-decoration: none;
     color: white;
-}
+  }
+
+  
+  .front-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    height: 50rem;
+    position: relative;
+  }
+  
+  .front-section .container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  
+  .front-section .front-container {
+    height: 100%;
+  }
+  
+  .front-section .front-container:hover .content {
+    bottom: 0;
+    background-color: #ffffffe3;
+    
+  }
+  
+  .front-section .vertical-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    left: 2rem;
+    letter-spacing: .3rem;
+    font-weight: bolder;
+    color: #df1313;
+  }
+  
+  .front-section .home {
+    height: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  
+  .front-section .home .container {
+    height: 25rem;
+    width: 25rem;
+    border: solid;
+    border-width: 3px;
+    border-radius: 50%;
+    border-color: #f3f3f3;
+    background: linear-gradient(70deg, white, pink);
+  }
+  
+  
+  
+  .front-section .home .content {
+    width: 140%;
+    position: absolute;
+    bottom: 32%;
+    left: -20%;
+    padding: 1rem;
+    -webkit-transition-duration: .5s;
+            transition-duration: .5s;
+  }
+  
+  .text-container {
+    text-align: center;
+    color: #df1313;
+    letter-spacing: .1rem;
+  }
+
+  
+  .start{
+    margin-left: 5rem;
+    margin-right: 5rem 
+  }
+  pre{
+    width: 40rem;
+    overflow-x: scroll; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #dfd5d5b7;
+  }
+
+  .blue{
+      color: blue;
+  }
+  .green{
+      color:rgb(20, 173, 20);
+  }
+  .red{
+      color:red;
+  }
+

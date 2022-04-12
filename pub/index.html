@@ -1,53 +1,103 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>resTracker.js Documentation</title>
-    <link rel="icon" href="" />
-
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>resTracker.js</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-    <link rel="stylesheet" href="/styles/index.css"/>
+  <link rel="stylesheet" href="styles/index.css" />
+  
+  <!-- Bootstrap js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+</head>
 
-    <!-- Bootstrap js -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script> -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head>
-
-  <body>
-    <section id="banner">
-        <h2>Welcome to the resTracker.js library</h2>
-        <p>Allows developers to build intuitive reports and plots for restaurant industry.</p>
-        <p>To use this library, add the following links and scripts to the HTML files</p>
-        <pre>
-          <code>
-              < link rel="stylesheet" href="https://res-tracker.herokuapp.com/lib/resTracker.css"/ >
-              < script type="text/javascript" src="https://res-tracker.herokuapp.com/lib/resTracker.js"></script>
-          </code>
-        </pre>
-        <ul class="actions">
-            <li>
-                <button><a href="documentation.html">API</a>
-                </button>
-            </li>
-            <li>
-                <button><a href="examples.html">Examples</a>
-                </button>
-            </li>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg mx-auto px-2 px-sm-5 py-0 py-sm-auto">
+      
+      <div class="collapse navbar-collapse col-7 mx-auto my-3" id="navbarText">
+        <ul class="navbar-nav w-100 justify-content-around">
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="https://github.com/csc309-winter-2022/js-library-huan1825">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+              </svg>
+            </a>
+          </li>
         </ul>
-    </section>
+      </div>
+    </nav>
+  </header>
+
+  <section class="front-section">
+    <div class="front-container d-flex flex-row">
+      <div class="vertical-text">
+        <div>resTracker library</div>
+      </div>
+
+      <div class="home mx-auto">
+        <ul class="actions">
+          <li>
+              <a href="documentation.html"><button class="btn-api">API</button></a>
+          </li>
+          <li>
+            <a href="examples.html"><button class="btn-ex">Examples</button></a>
+          </li>
+        </ul>
+        <div class="container">
+          <div class="content">
+            <div class="mx-auto col-12 col-lg-6">
+              <h1>Welcome to the resTracker.js</h1>
+            </div>
+            <div class="text-container col-12 mx-auto text">
+              <br>
+              Allows developers to build intuitive reports and plots for restaurant industry.
+              
+              To use this library, add the following links and scripts to the HTML files
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="start">
+    <h2>
+      Getting Started
+    </h2>
+    <p>
+      Copy-paste the stylesheet and javascript link into your <<span class="red">head</span>> to load our CSS and functions.
+    </p>
+    <pre class="shadow-lg p-3 mb-5 rounded">
+      <code>
+
+      <span class="blue"><</span><span class="red">link</span> <span class="blue">rel</span>=<span class="green">"stylesheet"</span> <span class="blue">href</span>=<span class="green">"https://res-tracker.herokuapp.com/lib/resTracker.css"</span>/<span class="blue">></span>
+      <span class="blue"><</span><span class="red">script</span> <span class="blue">type</span>=<span class="green">"text/javascript"</span> <span class="blue">src</span>=<span class="green">"https://res-tracker.herokuapp.com/lib/resTracker.js"</span><span class="blue">></span><span class="blue"><</span>/<span class="red"><script></script></span><span class="blue">></span>
+      </code>
+    </pre>
+    <h2>
+      Docs
+    </h2>
+    <p>Documentation for ResTracker is located on <a href="documentation.html">Read The Docs</a>.</p>
+    <h2>
+      Examples
+    </h2>
+    <p>Examples for ResTracker is located on <a href="examples.html">See Examples</a>.</p>
+  </section>
+
   </body>
+
 </html>

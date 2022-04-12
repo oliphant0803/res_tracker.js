@@ -1,0 +1,152 @@
+html, body {
+    overflow-x: hidden;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  p {
+    font-size: medium;
+  }
+  
+  h1 {
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: .6rem;
+    text-transform: capitalize;
+  }
+  
+  header {
+    height: 6rem;
+    -webkit-box-shadow: 0 2px 3px #58585830;
+            box-shadow: 0 2px 3px #58585830;
+    z-index: 50;
+  }
+
+  header .btn-info{
+    background: linear-gradient(70deg, white, pink);
+    color: rgb(109, 104, 104);
+    font-weight: bold;
+    border: none;
+  }
+  header .btn-info:hover, header .btn-info:focus{
+    color: black;
+  }
+
+  
+  header .navbar-nav li a {
+    color: #000000;
+    font-weight: 600;
+  }
+  header .navbar-nav li{
+    padding: 0rem 2rem 0rem 2rem;
+    border-radius: 15px;
+  }
+
+  .nav-item.active{
+    border-bottom: 5px solid rgba(255, 0, 0, 0.308);
+  }
+
+  header .navbar-nav li:hover {
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(70deg, white, pink);
+  }
+
+  .navbar-btn {
+    box-shadow: none;
+    outline: none !important;
+    border: none;
+}
+
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+#sidebar {
+    min-width: 15rem;
+    max-width: 15rem;
+    color: rgb(109, 104, 104);
+    transition: all 0.3s;
+
+}
+
+#sidebar.active {
+    margin-left: -15rem;
+}
+
+#sidebar ul.components {
+    padding: 2rem 0;
+}
+
+#sidebar ul p {
+    color: rgb(109, 104, 104);
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1rem;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: rgba(255, 0, 0, 0.308);
+    background: #fff;
+}
+
+#content {
+    width: 100%;
+    padding: 2rem;
+    min-height: 100vh;
+    transition: all 0.3s;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px dashed rgba(255, 0, 0, 0.308);
+    margin: 40px 0;
+}
+
+.linet {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.308);
+    margin: 10px 0;
+}
+
+
+.blue{
+    color: blue;
+}
+.green{
+    color:rgb(20, 173, 20);
+}
+.red{
+    color:red;
+}
+
+pre{
+    display:block;
+    max-width: 40rem;
+    overflow-x: auto; 
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #dfd5d5b7;
+    white-space: normal;
+  }
+
+.table-head {
+    font-weight: 900;
+    margin: 10px 0;
+}

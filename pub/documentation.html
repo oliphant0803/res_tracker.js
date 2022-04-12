@@ -1,33 +1,687 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>resTracker Examples</title>
-    <link rel="icon" href="" />
-
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>resTracker.js</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-    <link rel="stylesheet" href="/lib/resTracker.css"/>
+  <link rel="stylesheet" href="styles/documentation.css" />
+  
+  <!-- Bootstrap js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 
-    <!-- Bootstrap js -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script> -->
+    <script src="js/documentation.js"></script>
+</head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button type="button" id="sidebarCollapse" class="btn btn-info">
+        <span>Docs List</span>
+      </button>
+      
+      <div class="collapse navbar-collapse col-7 mx-auto my-3" id="navbarText">
+        <ul class="navbar-nav w-100 justify-content-around">
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="index.html">
+                Home
+            </a>
+          </li>
+          <li class="nav-item mx-auto active">
+            <a class="nav-link" href="documentation.html">
+                API
+            </a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="examples.html">
+                Examples
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-  </head>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="shadow-lg p-3 mb-5 bg-white rounded">
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="#usage">Getting Started</a>
+          </li>
+          <li>
+            <a href="#object">Objects</a>
+          </li>
+          <li>
+            <a href="#generateReport">generateReport</a>
+          </li>
+          <li>
+            <a href="#generateDishSummary">generateDishSummary</a>
+          </li>
+          <li>
+              <a href="#editReportDetail">editReportDetail</a>
+          </li>
+          <li>
+            <a href="#addOrder">addOrder</a>
+          </li>
+          <li>
+            <a href="#addDish">addDish</a>
+          </li>
+          <li>
+            <a href="#removeOrder">removeOrder</a>
+          </li>
+          <li>
+            <a href="#removeDish">removeDish</a>
+          </li>
+          <li>
+            <a href="#exportChart">exportChart</a>
+          </li>
+          <li>
+            <a href="#exportReport">exportReport</a>
+          </li>
 
-  <body>
-    Release in next phase
+        </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <h2 id="usage">Getting Started</h2>
+        <p>
+          Copy-paste the stylesheet and javascript link into your <<span class="red">head</span>> to load our CSS and functions.
+        </p>
+        <pre class="shadow-lg p-3 mb-5 rounded">
+          <code>
+          <span class="blue"><</span><span class="red">link</span> <span class="blue">rel</span>=<span class="green">"stylesheet"</span> <span class="blue">href</span>=<span class="green">"https://res-tracker.herokuapp.com/lib/resTracker.css"</span>/<span class="blue">></span>
+          <br>
+          <span class="blue"><</span><span class="red">script</span> <span class="blue">type</span>=<span class="green">"text/javascript"</span> <span class="blue">src</span>=<span class="green">"https://res-tracker.herokuapp.com/lib/resTracker.js"</span><span class="blue">></span><span class="blue"><</span>/<span class="red"><script></script></span><span class="blue">></span></code>
+        </pre>
+        <h2 id="object">resTracker.js Object</h2>
+        <p>All functions from resTracker were required to call from the resTracker.js object, the library base object can be instantiated as</p>
+        <pre class="shadow-lg rounded">
+          <code>
+            <span class="red">const</span> f = <span class="red">new</span> resTracker();</code>
+        </pre>
+        
+        <div class="row table-head">
+          <div class="col-md-4">
+               Object Type
+          </div>
+            <div class="col-md-8">
+              Description
+             </div>
+        </div>
+        <div class="row table-striped">
+          <div class="col-md-4">
+               Dish Object
+          </div>
+            <div class="col-md-8">
+              Representing a dish, including dish name, dish price, and dish count.
+              <br>e.g.:
+              <pre  class="shadow rounded">
+                <code>{<br>
+                  &emsp;name: String, <br>
+                  &emsp;price: Float, <br>
+                  &emsp;count: Int}<br>
+                }
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-4">
+               Order Object
+          </div>
+            <div class="col-md-8">
+              Representing a order, including list of dishes, order number, time of order, delivery partner, tax and tips
+              <br>
+              e.g.:
+              <pre  class="shadow rounded">
+                <code>{<br>
+                  &emsp;orderNum: Int,<br>
+                  &emsp;dishes: [Dish Object],<br>
+                  &emsp;tax: Int,<br>
+                  &emsp;tip: Int,<br>
+                  &emsp;partner: String,<br>
+                  &emsp;time: hh:mm:ss<br>
+                }
+      
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-4">
+               Report Object
+          </div>
+            <div class="col-md-8">
+              The information of report details, which can be customized from user's input
+              <pre  class="shadow rounded">
+                <code>{     <br>                     
+                  &emsp;title: {<br>
+                    &emsp;&emsp;  restaurant: String<br>
+                    &emsp;},<br>
+                    &emsp;orders: [Order Objects]<br>
+                }
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-4">
+               Dish Summary Object
+          </div>
+            <div class="col-md-8">
+              The information of dish summary details, which can be customized from user's input
+              <pre  class="shadow rounded">
+                <code>{
+                  <br>&emsp;partners: [String],
+                  <br>&emsp;dishes: [Dish Object]<br>
+                  }
+                </code>
+              </pre>
+             </div>
+        </div>
+
+        <div class="line"></div>
+
+
+        <h2>Usage</h2>
+        <p>Any functions should be called on this object for example</p>
+        <pre class="shadow-lg rounded">
+          <code>
+            <span class="red">const</span> table = <span class="red">f</span>.<span class="blue">generateReport</span>(exampleData, <span class="green">"report1"</span>, <span class="red">true</span>);</code>
+        </pre>
+
+        <div class="line"></div>
+
+        <h2 id="generateReport">generateReport(data, id, sub)</h2>
+        <p>generateReport: function(data, id, sub) needs developers to provide order summary object data, 
+          a string id, and an optional boolean sub. The function is used to generate order summary 
+          tables, with sub being true, the table will show all the subtotal information for 
+          an order object such as tax, tip, and list of dishes object information , else, the table 
+          will only show the total amount.
+        </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              data
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             Report Object
+            </div>
+            <div class="col-md-6">
+              The information of report details, which can be customized from user's input
+              <pre  class="shadow rounded">
+                <code>{     <br>                     
+                  &emsp;title: {<br>
+                    &emsp;&emsp;  restaurant: "restaurant name"<br>
+                    &emsp;},<br>
+                    &emsp;orders: [Order Objects]<br>
+                }
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              id
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              String
+            </div>
+            <div class="col-md-6">
+              Assign an id to this generated report 
+              <br>(e.g. 'report1')
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              sub
+          </div>
+          <div class="col-md-2">
+              true
+          </div>
+            <div class="col-md-2">
+              Boolean
+            </div>
+            <div class="col-md-6">
+              Does the report contains sub-contents including tax, tips, delivery partner and order time?
+             </div>
+        </div>
+
+        <div class="line"></div>
+
+        <h2 id="generateDishSummary">generateDishSummary(data, id, filter, sort)</h2>
+        
+        <p>generateDishSummary: function(data, id, filter, sort) needs developer to provide dish summary objects, and set the id attribute of the new table with “id”, filter and sort are optional booleans, allowing users to filter and sort the list of dish objects.
+
+        </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              data
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             Dish Summary Object
+            </div>
+            <div class="col-md-6">
+              The information of dish summary details, which can be customized from user's input
+              <pre  class="shadow rounded">
+                <code>{
+                  <br>&emsp;partners: ["partner1", "partner2"],
+                  <br>&emsp;dishes: [Dish Object]<br>
+                  }
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              id
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              String
+            </div>
+            <div class="col-md-6">
+              Assign an id to this generated dish summary 
+              <br>(e.g. 'summary1')
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              filter
+          </div>
+          <div class="col-md-2">
+              false
+          </div>
+            <div class="col-md-2">
+              Boolean
+            </div>
+            <div class="col-md-6">
+              Does the summary contain the ability to filter different delivery partners?
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              sort
+          </div>
+          <div class="col-md-2">
+              false
+          </div>
+            <div class="col-md-2">
+              Boolean
+            </div>
+            <div class="col-md-6">
+              Does the summary contain the ability to sort by price, order count, and name?
+             </div>
+        </div>
+
+        <div class="line"></div>
+
+        <h2 id="editReportDetail">editReportDetail(reportId, editInfo, mark)</h2>
+        
+        <p>editReportDetail: function(reportId, editInfo, mark) needs developers to provide the table id that need to modify on, as well as the editInfo which varies in format. If the developer is modifying dish objects in one order, editInfo contains the order number, and a new dish object to change to. If the developer is modifying time, date, or restaurant name, editInfo contains the field id to be changed, and string or time object that changes to. Mark is optional for developers to highlight the modified fields.
+        </p>
+
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              reportId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing report id that need to be modified on 
+              <br>(e.g. "report1")
+              <br> Note: report id must be valid, otherwise warning
+              <span class="red">"The input element does not exist"</span> or <span class="red">"The input element is not a report"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              editInfo
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              List
+            </div>
+            <div class="col-md-6">
+              editInfo contains the order number, and a new dish object to change to. If the developer is modifying time, date, or restaurant name, editInfo contains the field id to be changed, and string or time object that changes to. 
+              <br>(e.g. changing time of order)
+              <pre  class="shadow rounded">
+                <code>editInfo = ["order", 2, ["time", "12:59:00", false]];
+                </code>
+              </pre>
+              (e.g. changing restaurant name)
+              <pre  class="shadow rounded">
+                <code>editInfo = ["title", "restaurant", "Pizza Pizza"];
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              mark
+          </div>
+          <div class="col-md-2">
+              false
+          </div>
+            <div class="col-md-2">
+              Boolean
+            </div>
+            <div class="col-md-6">
+              Declare whether or not modified elements are being marked as red (for better indication)
+             </div>
+        </div>
+
+
+
+
+        <div class="line"></div>
+        <h2 id="addOrder">addOrder(data, reportId, mark, currentTime)</h2>
+        <p>addOrder: function(data, reportId, mark, currentTime) needs developer to input a new order object to append to the table with id “reportId”.  Mark is optional for developers to highlight the modified fields, and currentTime is optional for developers to update the new order time to current EDT.
+        </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              data
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              Order Object
+            </div>
+            <div class="col-md-6">
+              the new order to be added, orderNum must not be exists in the report
+              <pre  class="shadow rounded">
+                <code>{<br>
+                  &emsp;orderNum: Int,<br>
+                  &emsp;dishes: [Dish Object],<br>
+                  &emsp;tax: Int,<br>
+                  &emsp;tip: Int,<br>
+                  &emsp;partner: String,<br>
+                  &emsp;(optional)time: hh:mm:ss<br>
+                }
+      
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              reportId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing report id that need to be modified on 
+              <br>(e.g. "report1")
+              <br> Note: report id must be valid, otherwise warning
+              <span class="red">"The input element does not exist"</span> or <span class="red">"The input element is not a report"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              mark
+          </div>
+          <div class="col-md-2">
+              false
+          </div>
+            <div class="col-md-2">
+              Boolean
+            </div>
+            <div class="col-md-6">
+              Declare whether or not modified elements are being marked as red (for better indication)
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              currentTime
+          </div>
+          <div class="col-md-2">
+              true
+          </div>
+            <div class="col-md-2">
+              Boolean
+            </div>
+            <div class="col-md-6">
+              Declare whether or not modified time for new order is the current EDT time
+              <br> If the field is false and data contains time in correct form of hh:mm:ss, the new order will be added at the input time
+            </div>
+        </div>
+
+
+
+        <div class="line"></div>
+        <h2 id="addDish">addDish(data, reportId, orderId, mark)</h2>
+        <p>addDish: function(data, reportId, orderId, mark) needs developer to input a new dish object to append to the rows with id “orderId” to the table with id “reportId” to fix a inaccurate record. Mark is optional for developers to highlight the modified fields.
+
+        </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              data
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              Order Object
+            </div>
+            <div class="col-md-6">
+              the new dish to be added, including dish name, dish price and dish count
+              <pre  class="shadow rounded">
+                <code>{<br>
+                  &emsp;name: String, <br>
+                  &emsp;price: Float, <br>
+                  &emsp;count: Int}<br>
+                }
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              reportId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing report id that need to be modified on 
+              <br>(e.g. "report1")
+              <br> Note: report id must be valid, otherwise warning
+              <span class="red">"The input element does not exist"</span> or <span class="red">"The input element is not a report"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              orderId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              Int
+            </div>
+            <div class="col-md-6">
+              the existing orderNum that need to be modified on 
+              <br>(e.g. 1)
+              <br> Note: order id must be valid, otherwise warning
+              <span class="red">"The input order does not exist"</span>
+            </div>
+        </div>
+        <div class="linet"></div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              mark
+          </div>
+          <div class="col-md-2">
+              false
+          </div>
+            <div class="col-md-2">
+              Boolean
+            </div>
+            <div class="col-md-6">
+              Declare whether or not modified elements are being marked as red (for better indication)
+             </div>
+        </div>
+        
+
+
+
+        <div class="line"></div>
+
+        <h2 id="removeOrder">removeOrder(reportId, orderId)</h2>
+        
+        <p>
+
+        </p>
+
+        <div class="line"></div>
+        <h2 id="removeDish">removeDish(reportId, orderId, editDish)</h2>
+        <p>
+        </p>
+
+        <div class="line"></div>
+        <h2 id="exportChart">exportChart(reportId, objectType)</h2>
+        <p>
+        </p>
+
+
+        <div class="line"></div>
+        <h2 id="exportReport">exportReport(reportId, toObject, objectType, param)</h2>
+        <p>
+        </p>
+
+    </div>
+  </div>
+
+  
+
   </body>
+
 </html>
