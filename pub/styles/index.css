@@ -190,3 +190,10 @@ html, body {
       color:red;
   }
 
+  .page-footer{
+    position: absolute;
+  bottom: 2.5rem;
+  width: 100%;
+  height: 2.5rem; 
+  }
+

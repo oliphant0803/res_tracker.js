@@ -64,6 +64,15 @@ a:focus {
     transition: all 0.3s;
 }
 
+.page-footer{
+  position:absolute;
+  bottom: 0;
+}
+
+.example a{
+  background: linear-gradient(70deg, white, pink);
+}
+
 .wrapper {
     display: flex;
     width: 100%;

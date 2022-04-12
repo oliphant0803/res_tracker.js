@@ -96,6 +96,12 @@
 
         </ul>
 
+        <footer class="page-footer font-small pt-4">
+
+          <div class="footer-copyright text-center py-3">© CSC309 2022 Copyright:
+            <a href="https://github.com/oliphant0803"> oliphant0803</a>
+          </div>
+        </footer>
     </nav>
 
     <!-- Page Content  -->
@@ -661,26 +667,292 @@
         <h2 id="removeOrder">removeOrder(reportId, orderId)</h2>
         
         <p>
-
+          removeOrder: function(reportId, orderId) needs developers to input the orderId to be removed on the report with reportId. After the specified order is removed, the total revenue of the date belonging to this order will be updated
         </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              reportId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing report id that need to be modified on 
+              <br>(e.g. "report1")
+              <br> Note: report id must be valid, otherwise warning
+              <span class="red">"The input element does not exist"</span> or <span class="red">"The input element is not a report"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              orderId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing orderNum that need to be removed 
+              <br>(e.g. 1)
+              <br> Note: order id must be valid, otherwise warning
+              <span class="red">"The input order does not exist"</span>
+             </div>
+        </div>
+
 
         <div class="line"></div>
         <h2 id="removeDish">removeDish(reportId, orderId, editDish)</h2>
         <p>
+          removeDish: function(reportId, orderId, editDish) needs developers to input the orderId to be modified on the report with reportId. The editDish specifies which dish name to remove from the order. If the order only contains one dish, whole order will be removed. Lastly, order total and revenue of the day will be updated.
         </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              reportId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing report id that need to be modified on 
+              <br>(e.g. "report1")
+              <br> Note: report id must be valid, otherwise warning
+              <span class="red">"The input element does not exist"</span> or <span class="red">"The input element is not a report"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              orderId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing orderNum that need to be modified on 
+              <br>(e.g. 1)
+              <br> Note: order id must be valid, otherwise warning
+              <span class="red">"The input order does not exist"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              editDish
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing dish name that need to be removed from order
+              <br>(e.g. "Small Pepperoni")
+              <br> Note: dish name must exists in the given order, otherwise nothing will be removed
+             </div>
+        </div>
 
         <div class="line"></div>
         <h2 id="exportChart">exportChart(reportId, objectType)</h2>
         <p>
+          exportChart: function(reportId, objectType) enhance the ability to visualize the report, allowing developers to generate the report chart given the objectType of the report with reportId. There are 4 types of bar charts the function can export to, including revenue versus time, order count versus time, delivery partner, and dish counts.
         </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              reportId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing report id that need to be expoted to chart on 
+              <br>(e.g. "report1")
+              <br> Note: report id must be valid, otherwise warning
+              <span class="red">"The input element does not exist"</span> or <span class="red">"The input element is not a report"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              objectType
+          </div>
+          <div class="col-md-2">
+              "all"
+          </div>
+            <div class="col-md-2">
+              String Enum {"dish", "revenue", "timeline", "partner", "all"}
+            </div>
+            <div class="col-md-6">
+              <b>"all":</b> generate a dropdown for users to select one of the 4 chart type described below
+              <br>
+              <b>"dish":</b> generate a bar chart with x-axis being the unique dish names, and y-axis being the number of orders for this specific dish
+              <br>
+              <b>"revenue":</b> generate a bar chart with x-axis being the hour from a user specified time frame (default 8:00 to 21:00), and y-axis being the 
+              revenue in dollars the restaurant made during that time.
+              <br>
+              <b>"timeline":</b> generate a bar chart with x-axis being the hour from a user specified time frame (default 8:00 to 21:00), and y-axis being the 
+              count of orders the restaurant made during that time.
+              <br>
+              <b>"partner":</b> generate a bar chart with x-axis being the unique partner names, and y-axis being the number of orders for this specific partner
+             </div>
 
+        </div>
 
         <div class="line"></div>
         <h2 id="exportReport">exportReport(reportId, toObject, objectType, param)</h2>
         <p>
+          exportReport: function(reportId, toObject, objectType, param) allows developers to change the report object to either dish summary object, dish summary DOM representation, or dish count frequency graph with specified toObject boolean and objectType indicating whether to export as a graph or dish summary object. Param further specifies the exported object’s id and filter, sort abilities.
         </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              reportId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             String
+            </div>
+            <div class="col-md-6">
+              the existing report id that need to be expoted to chart on 
+              <br>(e.g. "report1")
+              <br> Note: report id must be valid, otherwise warning
+              <span class="red">"The input element does not exist"</span> or <span class="red">"The input element is not a report"</span>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              isObject
+          </div>
+          <div class="col-md-2">
+              false
+          </div>
+            <div class="col-md-2">
+             Boolean
+            </div>
+            <div class="col-md-6">
+              whether to return the function as DOM representation to a resTracker dish summary object
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              objectType
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              String Enum {"chart", "dish"}
+            </div>
+            <div class="col-md-6">
+              <b>"chart":</b> export to a bar chart with x-axis being the unique dish names, and y-axis being the number of orders for this specific dish
+              <br>
+              <b>"dish":</b> export to dish summary object
+             </div>
 
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              param
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              List (optional)
+            </div>
+            <div class="col-md-6">
+              if the user input objectType is dish, then the generated dish summary would need 3 more paramters for DOM representation. 
+              <br>(e.g. ["dish1", true, true])
+              <br> where "dish1" is the summary id, and two boolean expression indicating the summary has sort and filter functionalities, respectively.
+             </div>
+
+        </div>
+
+        <div class="line">
+          </div>
+        <p class="example">For more information on interactions and the visual customization of these objects, please visit <a href="examples.html">the Examples page</a>.</p>
     </div>
+    
+    
   </div>
 
   
