@@ -76,7 +76,11 @@
 		const buttonId = 'buttonOrder' + orderNum;
 		button.setAttribute('id', buttonId)
 		button.innerText = 'Hide'
-		button.onclick = function() {collapseOrders(buttonId, orderNum, table, sub)}
+        if(parent){
+            button.onclick = function() {collapseOrders(buttonId, orderNum, table, sub)}
+        }else{
+            button.onclick = function() {collapseOrders(buttonId, orderNum, table.parentNode, sub)}
+        }
 		td.appendChild(button);
         if(parent){
             table.appendChild(td);
@@ -224,18 +228,19 @@
     }
 
     function collapseOrders(id, orderNum, table, sub) {
-        const hidElement = table.querySelectorAll("#order"+orderNum)
+        const hidElement = document.querySelectorAll("#order"+orderNum)
         for (let i = 0; i < hidElement.length; i++){
             hidElement[i].classList.add("displayNone");
         }
+        console.log(table)
         Array.from(table.children).forEach ((child) =>{
-            const id = "order"+orderNum;
-            console.log(child.id);
-            if(child.id.includes(id)){
+            const i = "order"+orderNum;
+            if(child.id.includes(i)){
                 child.classList.add("displayNone");
             }
         });
-        const button = table.querySelector("#" + id)
+        console.log(id)
+        const button = document.querySelector("#" + id)
         button.innerHTML = 'Show'
         button.onclick = function() {expandOrders(id, orderNum, table, sub);}
     }
@@ -252,7 +257,7 @@
                 child.classList.remove("displayNone");
             }
         });
-        const button = table.querySelector('#' + id)
+        const button = document.querySelector('#' + id)
         button.innerHTML = 'Hide'
         button.onclick = function() {collapseOrders(id, orderNum, table, sub)}
     }
@@ -1090,7 +1095,8 @@
             let currReport = document.getElementById(reportId);
             let dates = currReport.querySelectorAll("#resDate");
             dates.forEach(date => {
-                if (date.innerHTML == data.date){
+                console.log(date.innerHTML.split('<')[0]);
+                if (date.innerHTML.split('<')[0] == data.date){
                     //find the orders for current date
                     var dateClass = data.date.replaceAll(',', '');
                     var dateClass = dateClass.replaceAll(' ', '');
@@ -1143,11 +1149,12 @@
                 let tipBody = currReport.querySelector("#order"+orderId+"tax");
                 //check the current dish count in this order
                 let dishId = currentDishCount(currReport, orderId);
+                var date = document.getElementById("order"+orderId).parentNode.className;
                 // newDish.setAttribute("id", "order"+orderId+"dish"+dishId);
-                let newDish = addOneDish(data, orderId, dishId);
+                let newDish = addOneDish(data, orderId, dishId, date);
                 currReport.insertBefore(newDish, tipBody)
 
-                var date = document.getElementById("order"+orderId).parentNode.className;
+                
                 let total = findTotal(currReport, orderId);
                 currReport.querySelector("#noSubTotal"+orderId).children[1].innerHTML = "$" + total;
                 let revenue = findRevenueByDate(currReport, date, true);

@@ -1,216 +1,701 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>resTracker Examples</title>
-    <link rel="icon" href="" />
-
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>resTracker.js</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-    <link rel="stylesheet" href="/lib/resTracker.css"/>
-    <link rel="stylesheet" href="/styles/examples.css"/>
+  <link rel="stylesheet" href="styles/examples.css" />
+  <link rel="stylesheet" href="/lib/resTracker.css"/>
+  
+  <!-- Bootstrap js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
 
-    <!-- Bootstrap js -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script> -->
     <script type="text/javascript" src="/lib/resTracker.js"></script>
     <script type="text/javascript" src="/js/examples.js"></script>
+</head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="tmp">
+        <span></span>
+      </div>
+      <div class="collapse navbar-collapse col-7 mx-auto my-3" id="navbarText">
+        <ul class="navbar-nav w-100 justify-content-around">
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="index.html">
+                Home
+            </a>
+          </li>
+          <li class="nav-item mx-auto">
+            <a class="nav-link" href="documentation.html">
+                API
+            </a>
+          </li>
+          <li class="nav-item mx-auto active">
+            <a class="nav-link" href="examples.html">
+                Examples
+            </a>
+          </li>
+          
+            
+        </ul>
+      </div>
 
-  </head>
+    </nav>
+  </header>
 
-  <body>
-    <div id="example6" class="example">
-        
-    </div>
+  <div class="wrapper">
+    <nav id="sidebar" class="shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="btn btn-info">
+          <span>Examples</span>
+        </div>
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="#1">Generate Report</a>
+          </li>
+          <li>
+            <a href="#2">Generate Dish Summary</a>
+            </li>
+        <li>
+          <a href="#3"><b>Modify Report Information</b></a>
+        </li>
+        <li>
+          <a href="#4">Changing restaurant name</a>
+        </li>
+        <li>
+          <a href="#5">Changing time</a>
+        </li>
+        <li>
+            <a href="#6">Updating tip, tax, partner or ordered dishes</a>
+          </li>
 
-    
-    <div class="example-container">
-      <h1>resTracker.js Examples</h1>
-      
-      <p>Example data to use to generate the restaurant report, developers should input the data as follow with restaurant name, valid date, and orders</p>
-      <pre>
-        <code>                             
-          title: {
+          <li>
+            <a href="#7"><b>Modify Report Orders</b></a>
+          </li>
+
+          <li>
+            <a href="#8">Add orders and dishes</a>
+          </li>
+
+          <li>
+          <a href="#9">Remove orders and dishes</a>
+        </li>
+
+        <li>
+            <a href="#10"><b>Export Report to Dish Summary</b></a>
+          </li>
+
+          <li>
+            <a href="#11"><b>Export Report to Charts</b></a>
+          </li>
+
+          <li>
+            <a href="#12"><b>Combine Everything Together</b></a>
+          </li>
+
+        </ul>
+
+        <footer class="page-footer font-small pt-4">
+
+          <div class="footer-copyright text-center py-3">© CSC309 2022 Copyright:
+            <a href="https://github.com/oliphant0803"> oliphant0803</a>
+          </div>
+        </footer>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+        <h2 class="mb-5" id="1">Generate Report</h2>
+
+        <h4>Creating a resTracker object</h4>
+        <p>All functions from resTracker were required to call from the resTracker.js object, the library base object can be instantiated as</p>
+        <pre class="shadow-lg rounded">
+          <code>
+    <span class="red">const</span> f = <span class="red">new</span> resTracker();</code>
+        </pre>
+        <h4>Creating a report object</h4>
+        <p>Example data to use to generate the restaurant report, developers should input the data as follow with restaurant name, valid date, and orders</p>
+        <pre class="shadow-lg rounded mb-5" id="object1">
+            <code>
+    const exampleData = {
+        title: {
             "restaurant": "Pizza Pizza", 
-            "date": "1 March, 2022"
-          },
-          orders: [
-                {
-                    "orderNum": "1",
-                    "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
-                                {"name": "Small Canadian", "price": "15", "count": "1"}
-                            ],
-                    "tax": "11.7",
-                    "tip": "10",
-                    "partner": "DoorDash",
-                    "time": "10:01:14"
-                },
-                {
-                    "orderNum": "2",
-                    "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
-                                {"name": "Small Hawaiian", "price": "18", "count": "2"}
-                            ],
-                    "tax": "16.2",
-                    "tip": "15",
-                    "partner": "Uber Eat",
-                    "time": "10:02:00"
-                },
-                {
-                    "orderNum": "3",
-                    "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
-                    "tax": "7.5",
-                    "tip": "0",
-                    "partner": "Uber Eat",
-                    "time": "10:05:55"
-                }
-            ]
-        }
-        </code>
-      </pre>
-      <p>With the sample data described above, the first example generates a non-editable order 
-        summary of the given date, developers can choose the report id for their 
-        convinent, and the following table contains subtotal for each order as subtotal 
-        augument is true for this example</p>
-      <pre>
-        <code>
-          const f = new resTracker();
-          const table = f.generateReport(exampleData, "report1", true);
-	        document.getElementById("example1").appendChild(table);
-        </code>
-        <button class="button" id="ex1b" onclick="showEx1()">Run code</button>
-      </pre>
+        },
+        orders: [
+            {
+                "orderNum": "1",
+                "date": "1 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
+                            {"name": "Small Canadian", "price": "15", "count": "1"}
+                        ],
+                "tax": "11.7",
+                "tip": "10",
+                "partner": "DoorDash",
+                "time": "10:01:14"
+            },
+            {
+                "orderNum": "2",
+                "date": "1 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
+                            {"name": "Small Hawaiian", "price": "18", "count": "2"}
+                        ],
+                "tax": "16.2",
+                "tip": "15",
+                "partner": "Uber Eat",
+                "time": "11:02:00"
+            },
+            {
+                "orderNum": "3",
+                "date": "1 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+                "tax": "7.5",
+                "tip": "0",
+                "partner": "Uber Eat",
+                "time": "12:05:55"
+            },
+            {
+                "orderNum": "4",
+                "date": "2 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+                "tax": "7.5",
+                "tip": "0",
+                "partner": "Uber Eat",
+                "time": "12:05:55"
+            }
+        ]
+    }       </code>
+        </pre>
 
-      <div id="example1" class="example">
-      </div>
+        <p>With the sample data described above, the first example generates a non-editable order summary of the given date, developers can choose the report id for their convinent, and the following table contains subtotal for each order as subtotal augument is true for this example</p>
 
-      <p>The editReportDetail function allows the developer to modify and update any field of the generated report
-        The below example shows the developer changing the date with "marked" flag indicating the field is modified.
-      </p>
-      <p>
-        Developers can also change the time to current EDT time or the time they wish to specified for each order, the example below
-        shows the code to change order 1's time to current EDT, and to change order 2's time to 12:59:00
-      </p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab1" data-toggle="tab" href="#JavaScript1" role="tab" aria-controls="JavaScript1" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab1" data-toggle="tab" href="#HTML1" role="tab" aria-controls="HTML1" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML1" role="tabpanel" aria-labelledby="html-tab1" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example1" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript1" role="tabpanel" aria-labelledby="js-tab1" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const f = new resTracker();
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example1").appendChild(table);
+                        </code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex1b" onclick="showEx1()">Run Code</button>
+            </div>
+          </div>
+        <div id="example1" class="example">
+        </div>
 
-      <pre>
-        <code>
-          const editInfo1 = ["title", "date", "2 March, 2022"];
-          f.editReportDetail("report1", editInfo1, true);
+        <h2 class="mb-5" id="2">Generate Dish Summary</h2>
+        <h4>Creating a dish summary object</h4>
+        <p>Defining a dish summary object as below, developers can use the below function to generate a dish summary table, note that the manually defined exampleDSData is not exported from report example data, so the 
+            content information does not match.
+        </p>
+        <p>To define a dish summary object representing the report data, use exportReport function</p>
+        <pre class="shadow-lg rounded mb-5" id="object1">
+            <code>
+    const exampleDSData = {
+        "partners": ["DoorDash", "Uber Eat", "Skip The Dishes"],
+        "dishes": [
+            {
+                "name": "Small Pepperoni", "price": "25", "count": "9"
+            },
+            {
+                "name": "Large Pepperoni", "price": "35", "count": "2"
+            },
+            {
+                "name": "Small Hawaiian", "price": "18", "count": "2"
+            },
+            {
+                "name": "Small Canadian", "price": "15", "count": "1"
+            }
+        ]
+    }</code>
+        </pre>
+        <p>With the sample data described above, the second example generates a dish summary with "ds1" as the summary id, with sort functionality and set filter to false</p>
 
-          const editInfo2 = ["order", 1, ["time", "", true]]
-          f.editReportDetail("report1", editInfo2);
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab2" data-toggle="tab" href="#JavaScript2" role="tab" aria-controls="JavaScript2" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab2" data-toggle="tab" href="#HTML2" role="tab" aria-controls="HTML2" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML2" role="tabpanel" aria-labelledby="html-tab2" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example2" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript2" role="tabpanel" aria-labelledby="js-tab2" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateDishSummary(exampleDSData, "ds1", false, true);
+    document.getElementById("example2").appendChild(table)
+                        </code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex2b" onclick="showEx2()">Run Code</button>
+            </div>
+          </div>
+        <div id="example2" class="example">
+        </div>
 
-          const editInfo3 = ["order", 2, ["time", "12:59:00", false]]
-          f.editReportDetail("report1", editInfo3);
+        <h2 class="mb-5" id="3">Modify Report Information</h2>
+        <h4 id="4">Changing restaurant name</h4>
+        <p>With the given edit infomations for report1, name of the restaurant are changed with mark being true</p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab3" data-toggle="tab" href="#JavaScript3" role="tab" aria-controls="JavaScript3" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab3" data-toggle="tab" href="#HTML3" role="tab" aria-controls="HTML3" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML3" role="tabpanel" aria-labelledby="html-tab3" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example3" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript3" role="tabpanel" aria-labelledby="js-tab3" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+        const table = f.generateReport(exampleData, "report1", true);
+        document.getElementById("example3").appendChild(table)
+    
+        const editInfo1 = ["title", "restaurant", "Pizza Hut"];
+        f.editReportDetail("report1", editInfo1, true);</code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex3b" onclick="showEx3()">Run Code</button>
+            </div>
+          </div>
+        <div id="example3" class="example">
+        </div>
+        <h4 id="5">Changing order to current time or specific time</h4>
 
-        </code>
-        <button class="button" id="ex2b" onclick="showEx2()">Run code</button>
-      </pre>
-      
-      <div id="example2" class="example">
-      </div>
 
-      <p>
-        editReportDetail is also capable of updating the tip, tax, as well as the details for each ordered
-        dishes, the following code demonstrates a developer may update the tips for order 3 and dish for order 1,
-        the total amount and revenue are be changed associated with the price change.
-      </p>
+        <p>With the given edit infomations for report1, time for orders are changed accordingly</p>
+        <p>As shown below, the time for order is being changed into the current EDT time, and order 2 time being set to 12:59:00</p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab4" data-toggle="tab" href="#JavaScript4" role="tab" aria-controls="JavaScript4" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab4" data-toggle="tab" href="#HTML4" role="tab" aria-controls="HTML4" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML4" role="tabpanel" aria-labelledby="html-tab4" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example4" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript4" role="tabpanel" aria-labelledby="js-tab4" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example4").appendChild(table)
 
-      <pre>
-        <code>
-          const editInfo4 = ["order", 3, ["tip", "10.00"]]
-          f.editReportDetail("report1", editInfo4);
+    const editInfo2 = ["order", 1, ["time", "", true]]
+    f.editReportDetail("report1", editInfo2);
 
-          const editInfo5 = ["order", 1, ["dish1", ["Large Pepperoni", "35", "2"]]]
-          f.editReportDetail("report1", editInfo5);
+    const editInfo3 = ["order", 2, ["time", "12:59:00", false]]
+    f.editReportDetail("report1", editInfo3);</code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex4b" onclick="showEx4()">Run Code</button>
+            </div>
+          </div>
+        <div id="example4" class="example">
+        </div>
 
-        </code>
-        <button class="button" id="ex3b" onclick="showEx3()">Run code</button>
-      </pre>
-      <div id="example3" class="example">
-      </div>
+        <h4 id="6">Updating tip, tax, partner or ordered dishes</h4>
+        <p>The first edit information indicates the report changes order 1's partner to Skip The Dishes, the next information allows changing $10 tips for order 3, and lastly order 1 had additional dishes replaced the old dish 1.</p>
+        <p>The order total and revenue of the day are updated correspondingly</p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab5" data-toggle="tab" href="#JavaScript5" role="tab" aria-controls="JavaScript5" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab5" data-toggle="tab" href="#HTML5" role="tab" aria-controls="HTML5" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML5" role="tabpanel" aria-labelledby="html-tab5" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example5" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript5" role="tabpanel" aria-labelledby="js-tab5" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example5").appendChild(table)
 
-      <p>
-        addOrder is designed for developers to add order to the given report,
-        developer can further choose "marked" tag or "current-time" auguments optionally for their convinence.
-        In this example, we have a newOrder object as follow.
-      </p>
-      <pre>
-        <code>
-          const newOrder = {
-            "orderNum": "4",
-            "dishes": [{"name": "Large Pepperoni", "price": "35", "count": "2"}],
-            "tax": "8.75",
-            "tip": "5",
-            "partner": "Uber Eat",
-        }
-        </code>
-      </pre>
-      <p>
-        addDish adds dishes with price and count to a specific order developer put in paramter, in the example, the 
-        added 3 small pepperoni pizza to order 4.
-      </p>
-      <p>
-        Both functions update revenue and subtotals respectively with the changes.
-      </p>
-      <pre>
-        <code>
-          f.addOrder(newOrder, "report1", false, true);
+    const editInfo3 = ["order", 1, ["partner", "Skip The Dishes"]]
+    f.editReportDetail("report1", editInfo3);
 
-          f.addDish({"name": "Small Pepperoni", "price": "25", "count": "3"}, "report1", 4, false);
-        </code>
-        <button class="button" id="ex4b" onclick="showEx4()">Run code</button>
-      </pre>
-      <div id="example4" class="example">
-      </div>
+    const editInfo4 = ["order", 3, ["tip", "10.00"]]
+    f.editReportDetail("report1", editInfo4);
 
-      <p>Defining a dish summary object as below, developers can use the below function to generate a dish summary table
-        (Currently in progress)
-      </p>
-      <pre>
-        <code>
-          const exampleDSData = {
-            "partners": ["DoorDash", "Uber Eat", "Skip The Dishes"],
-            "dishes": [
-                {
-                    "name": "Small Pepperoni", "price": "25", "count": "9"
-                },
-                {
-                    "name": "Large Pepperoni", "price": "35", "count": "2"
-                },
-                {
-                    "name": "Small Hawaiian", "price": "18", "count": "2"
-                },
-                {
-                    "name": "Small Canadian", "price": "15", "count": "1"
-                }
-            ]
-        }
-        </code>
-      </pre>
+    const editInfo5 = ["order", 1, ["dish1", ["Large Pepperoni", "35", "2"]]]
+    f.editReportDetail("report1", editInfo5);</code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex5b" onclick="showEx5()">Run Code</button>
+            </div>
+          </div>
+        <div id="example5" class="example">
+        </div>
 
-      <pre>
-        <code>
-          const table = f.generateDishSummary(exampleDSData, "ds1", true, true);
+        <h2 id="7">Modify Report Orders</h2>
+        <h4 id="8">Add orders and dishes</h4>
+        <p>addOrder is designed for developers to add order to the given report, developer can further choose "marked" tag or "current-time" auguments optionally for their convinence. In this example, we have a newOrder object as follow.</p>
+        <p>addDish adds dishes with price and count to a specific order developer put in paramter, in the example, the added 3 small pepperoni pizza to order 5.
+            <br>
+            Both functions update revenue and subtotals respectively with the changes.</p>
+        <p>In this example, the order are added at current EDT time</p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab6" data-toggle="tab" href="#JavaScript6" role="tab" aria-controls="JavaScript6" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab6" data-toggle="tab" href="#HTML6" role="tab" aria-controls="HTML6" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML6" role="tabpanel" aria-labelledby="html-tab6" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example6" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript6" role="tabpanel" aria-labelledby="js-tab6" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example6").appendChild(table)
+    
+    const newOrder = {
+        "orderNum": "5",
+        "date": "1 March, 2022",
+        "dishes": [{"name": "Large Pepperoni", "price": "35", "count": "2"}],
+        "tax": "8.75",
+        "tip": "5",
+        "partner": "Uber Eat",
+    }
 
-	        document.getElementById("example5").appendChild(table)
-        </code>
-        <button class="button" id="ex5b" onclick="showEx5()">Run code</button>
-      </pre>
-      <div id="example5" class="example">
+    const newDish = {"name": "Small Pepperoni", "price": "25", "count": "3"};
+
+    f.addOrder(newOrder, "report1", false, true);
+    f.addDish(newDish, "report1", 5, false);</code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex6b" onclick="showEx6()">Run Code</button>
+            </div>
+          </div>
+        <div id="example6" class="example">
+        </div>
+        <h4 id="9">Remove orders and dishes</h4>
+        <p>In the following example, small canadian from order 1 is removed, thus leaving only small pepperoni left for order 1</p>
+        <p>Since order 3 only contains small pepperoni, the order 3 is completely removed from the report</p>
+        <p>The last line represents order 2 is removed from report1</p>
+        <p>Both functions update revenue and subtotals respectively with the changes.</p>
+
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab7" data-toggle="tab" href="#JavaScript7" role="tab" aria-controls="JavaScript7" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab7" data-toggle="tab" href="#HTML7" role="tab" aria-controls="HTML7" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML7" role="tabpanel" aria-labelledby="html-tab7" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example7" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript7" role="tabpanel" aria-labelledby="js-tab7" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example7").appendChild(table)
+
+    f.removeDish("report1", "1", "Small Canadian");
+
+    f.removeDish("report1", "3", "Small Pepperoni");
+
+    f.removeOrder("report1", "2");</code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex7b" onclick="showEx7()">Run Code</button>
+            </div>
+          </div>
+        <div id="example7" class="example">
+        </div>
+
+        <h2 id="10">Export Report to Dish Summary</h2>
+        <p>As described in documentation, the report to summary function can export both to object or to DOM representation of the object. For this demonstration, we will show the report exports to dish summary bar graph</p>
+        <p>The export to dish summary table option is demonstrated in "Combine Everything Together" section</p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab8" data-toggle="tab" href="#JavaScript8" role="tab" aria-controls="JavaScript8" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab8" data-toggle="tab" href="#HTML8" role="tab" aria-controls="HTML8" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML8" role="tabpanel" aria-labelledby="html-tab8" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example8" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript8" role="tabpanel" aria-labelledby="js-tab8" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example8").appendChild(table)
+
+    const ds = f.exportReport("report1", false, "chart");
+	document.getElementById("example8").appendChild(ds);</code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex8b" onclick="showEx8()">Run Code</button>
+            </div>
+          </div>
+        <div id="example8" class="example">
+        </div>
+
+        <h2 id="11">Export Report to Charts</h2>
+        <p>The export to chart function allows developers to export to 4 different graphs to visualization, the example will be demonstrated with default "all" options, which allows selecting any of the chart type in dropdown</p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab9" data-toggle="tab" href="#JavaScript9" role="tab" aria-controls="JavaScript9" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab9" data-toggle="tab" href="#HTML9" role="tab" aria-controls="HTML8" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML9" role="tabpanel" aria-labelledby="html-tab9" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example9" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript9" role="tabpanel" aria-labelledby="js-tab9" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example9").appendChild(table)
+
+    const chart = f.exportChart("report1", "all"); 
+    //default time interval is 8am to 21pm
+    document.getElementById("example9").appendChild(chart);</code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex9b" onclick="showEx9()">Run Code</button>
+            </div>
+          </div>
+        <div id="example9" class="example">
+        </div>
         
-      </div>
-    </div>
+        <h2 id="12">Combine Everything Together</h2>
+        <p>Notice that in the previous examples, each example have tables/report are generated from exampleData, to give better instuition on what a specific function can do.</p>
+        <p>Now, we will combine everything together and export the report for charts for visualization</p>
+
+        <p>Play around the interactions for chart types, sort and filter abilities</p>
+            
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab10" data-toggle="tab" href="#JavaScript10" role="tab" aria-controls="JavaScript10" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab10" data-toggle="tab" href="#HTML10" role="tab" aria-controls="HTML10" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML10" role="tabpanel" aria-labelledby="html-tab10" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    < div id="example10" >
+    < /div >
+    < div id="example11" >
+    < /div >
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript10" role="tabpanel" aria-labelledby="js-tab10" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const table = f.generateReport(exampleData, "report1", true);
+    document.getElementById("example10").appendChild(table)
+
+    const editInfo1 = ["order", 1, ["time", "", true]]
+    f.editReportDetail("report1", editInfo1);
+
+    const editInfo2 = ["order", 2, ["time", "12:59:00", false]]
+    f.editReportDetail("report1", editInfo2);
+
+    const editInfo3 = ["order", 1, ["partner", "Skip The Dishes"]]
+    f.editReportDetail("report1", editInfo3);
+
+    const editInfo4 = ["order", 3, ["tip", "10.00"]]
+    f.editReportDetail("report1", editInfo4);
+
+    const editInfo5 = ["order", 1, ["dish1", ["Large Pepperoni", "35", "2"]]]
+    f.editReportDetail("report1", editInfo5);
+
+    const newDish = {"name": "Small Pepperoni", "price": "25", "count": "3"};
+
+    f.addOrder(newOrder, "report1", false, true);
+    f.addDish(newDish, "report1", 5, false);
+
+    const chart = f.exportChart("report1", "all"); 
+    //default time interval is 8am to 21pm
+    document.getElementById("example10").appendChild(chart);
+
+    const ds = f.exportReport("report1", false, "dish", ["ds1", true, true]);
+    document.getElementById("example11").appendChild(ds);
+
+    </code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex10b" onclick="showEx10()">Run Code</button>
+            </div>
+          </div>
+        
+        <div id="example10" class="example">
+        </div>
+        <div id="example11" class="example">
+        </div>
+
+        </div>
   </body>
+
 </html>

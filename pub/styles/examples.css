@@ -1,43 +1,180 @@
-  
-.example{
-    margin: auto;
-    width: 50%;
-    background-color: antiquewhite;
-    padding: 10px;
+html, body {
+  overflow-x: hidden;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.example-container{
-    margin: 2rem 5rem 5rem 5rem;
+p {
+  font-size: medium;
 }
 
-pre {
-    display: block;
-    font-family: 'Courier New';
-    font-size: medium;
-    margin: 0;
-  }
-  
-  pre code span {
-    color:darkred;
-    font-weight: bold;
-  }
-  
-  p {
-    margin: 2rem 2rem 2rem 2rem;
-    font-size: large;
-  }
-
-  .button {
-  background-color: rgb(150, 150, 150);
-  border: none;
-  color: white;
-  padding: 15px 32px;
+h1 {
+  font-size: xx-large;
+  font-weight: bold;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+  letter-spacing: .6rem;
+  text-transform: capitalize;
+}
+
+header {
+  height: 6rem;
+  -webkit-box-shadow: 0 2px 3px #58585830;
+          box-shadow: 0 2px 3px #58585830;
+  z-index: 50;
+}
+
+.btn-info, .btn-info:hover, .btn-info:focus{
+  background: linear-gradient(70deg, white, pink);
+  color: rgb(109, 104, 104);
+  font-weight: bold;
+  border: none;
+}
+
+
+
+header .navbar-nav li a {
+  color: #000000;
+  font-weight: 600;
+}
+header .navbar-nav li{
+  padding: 0rem 2rem 0rem 2rem;
   border-radius: 15px;
 }
-  
+
+.nav-item.active{
+  border-bottom: 5px solid rgba(255, 0, 0, 0.308);
+}
+
+header .navbar-nav li:hover {
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(70deg, white, pink);
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.page-footer{
+position:absolute;
+bottom: 0;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#sidebar {
+  min-width: 15rem;
+  max-width: 15rem;
+  color: rgb(109, 104, 104);
+  transition: all 0.3s;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.tmp{
+  width: 5rem;
+}
+
+#sidebar ul.components {
+  padding: 2rem 0;
+}
+
+#sidebar ul p {
+  color: rgb(109, 104, 104);
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1rem;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: rgba(255, 0, 0, 0.308);
+  background: #fff;
+}
+
+#content {
+  margin-left: 15rem;
+  width: 100%;
+  padding: 2rem;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed rgba(255, 0, 0, 0.308);
+  margin: 40px 0;
+}
+
+.linet {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.308);
+  margin: 10px 0;
+}
+
+
+.blue{
+  color: blue;
+}
+.green{
+  color:rgb(20, 173, 20);
+}
+.red{
+  color:red;
+}
+
+.tab-content{
+  background-color: #f5f2f0;
+}
+
+.html .active{
+  background: linear-gradient(70deg,#f5f2f0, pink);
+}
+
+.js .active{
+  background: linear-gradient(70deg, pink, #f5f2f0);
+}
+
+pre{
+  display:block;
+  max-width: 60rem;
+  max-height: 40rem;
+  overflow-y: auto;
+  overflow-x: auto; 
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f5f2f0;
+  white-space: pre;
+}
+
+.button{
+  width: 100%;
+  background-color: #f5f2f0;
+}
+
+.example{
+  display: block;
+  margin-bottom: 5rem;
+}
