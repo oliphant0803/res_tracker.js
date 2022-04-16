@@ -74,6 +74,79 @@ const exampleDSData = {
     ]
 }
 
+const res1Data = {
+	title: {
+		"restaurant": "Pizza Pizza 1", 
+	},
+	orders: [
+        {
+            "orderNum": "1",
+            "date": "1 March, 2022",
+            "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
+                        {"name": "Small Canadian", "price": "15", "count": "1"}
+                    ],
+            "tax": "11.7",
+            "tip": "10",
+            "partner": "DoorDash",
+            "time": "10:01:14"
+        }
+    ]
+}
+
+const res2Data = {
+	title: {
+		"restaurant": "Pizza Pizza 2", 
+	},
+	orders: [
+        {
+            "orderNum": "1",
+            "date": "5 March, 2022",
+            "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
+                        {"name": "Small Hawaiian", "price": "18", "count": "2"}
+                    ],
+            "tax": "16.2",
+            "tip": "15",
+            "partner": "Uber Eat",
+            "time": "11:02:00"
+        },
+        {
+            "orderNum": "2",
+            "date": "5 March, 2022",
+            "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+            "tax": "7.5",
+            "tip": "0",
+            "partner": "Uber Eat",
+            "time": "12:05:55"
+        }
+    ]
+}
+
+const res3Data = {
+	title: {
+		"restaurant": "Pizza Pizza 3", 
+	},
+	orders: [
+        {
+            "orderNum": "1",
+            "date": "2 Feb, 2022",
+            "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+            "tax": "7.5",
+            "tip": "0",
+            "partner": "Uber Eat",
+            "time": "12:05:55"
+        },
+        {
+            "orderNum": "2",
+            "date": "4 March, 2022",
+            "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+            "tax": "7.5",
+            "tip": "0",
+            "partner": "Uber Eat",
+            "time": "12:05:55"
+        }
+    ]
+}
+
 const newOrder = {
     "orderNum": "5",
     "date": "1 March, 2022",
@@ -87,7 +160,7 @@ const newOrder = {
 const f = new resTracker();
 
 function showEx1(){
-    for(let i = 1; i<=11; i++){
+    for(let i = 1; i<=12; i++){
         if(i == 1){
             continue;
         }
@@ -110,7 +183,7 @@ function showEx1(){
 }
 
 function showEx4(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 4){
             continue;
         }
@@ -148,7 +221,7 @@ function showEx4(){
 }
 
 function showEx3(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 3){
             continue;
         }
@@ -178,7 +251,7 @@ function showEx3(){
 }
 
 function showEx5(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 5){
             continue;
         }
@@ -213,7 +286,7 @@ function showEx5(){
 }
 
 function showEx7(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 7){
             continue;
         }
@@ -245,7 +318,7 @@ function showEx7(){
 }
 
 function showEx6(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 6){
             continue;
         }
@@ -274,7 +347,7 @@ function showEx6(){
 }
 
 function showEx10(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 10){
             continue;
         }
@@ -324,7 +397,7 @@ function showEx10(){
 }
 
 function showEx8(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 8){
             continue;
         }
@@ -352,7 +425,7 @@ function showEx8(){
 }
 
 function showEx9(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 9){
             continue;
         }
@@ -381,7 +454,7 @@ function showEx9(){
 
 
 function showEx2(){
-    for(let i = 1; i<= 11; i++){
+    for(let i = 1; i<= 12; i++){
         if(i == 2){
             continue;
         }
@@ -400,6 +473,38 @@ function showEx2(){
     const table = f.generateDishSummary(exampleDSData, "ds1", false, true);
 	document.getElementById("example2").appendChild(table)
     document.getElementById("ex2b").disabled = true;
+}
+
+function showEx11(){
+
+    for(let i = 1; i<= 12; i++){
+        if(i == 12){
+            continue;
+        }
+        if(document.getElementById("ex"+i+"b")){
+            document.getElementById("ex"+i+"b").disabled = false;
+        }
+        node = document.getElementById("example"+i);
+        if(node != null){
+            var child = node.lastElementChild; 
+            while (child) {
+                node.removeChild(child);
+                child = node.lastElementChild;
+            }
+        }
+    }
+
+    const resData = [res1Data, res2Data, res3Data];
+    const ids = ["report1", "report2", "report3"]
+    f.multiResReport(resData, ids, "example12");
+
+    const editInfo = ["order", 1, ["partner", "Skip The Dishes"]]
+    f.editReportDetail("report1", editInfo);
+
+    const editInfo2 = ["order", 2, ["tip", "10.00"]]
+    f.editReportDetail("report2", editInfo2);
+
+    document.getElementById("ex11b").disabled = true;
 }
 
 function createBS(){
@@ -458,7 +563,9 @@ function createBS(){
 
 }
 
+
+
 window.addEventListener("load", () =>{
-	createBS();
+
 })
 

@@ -106,6 +106,10 @@
             <a href="#12"><b>Combine Everything Together</b></a>
           </li>
 
+          <li>
+            <a href="#13">For Multi-restaurant Owners</a>
+          </li>
+
         </ul>
 
 
@@ -688,6 +692,140 @@
         <div id="example10" class="example">
         </div>
         <div id="example11" class="example">
+        </div>
+
+
+
+
+        <h2 id="13">Additional Features </h2>
+        
+        <h4>For multiple restaurants owners</h4>
+
+        <p>Multi-restaurant owners should have data from order reports from different restaurants, the data object pass in is a list of report objects. For example:</p>
+        <p>Asssume the owners owns 3 different pizza pizza restaurants, and data for each restaurant are report object shown below with different names</p>
+        <pre class="shadow-lg rounded mb-5" id="object1">
+          <code>
+    const res1Data = {
+      title: {
+        "restaurant": "Pizza Pizza 1", 
+      },
+      orders: [
+            {
+                "orderNum": "1",
+                "date": "1 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
+                            {"name": "Small Canadian", "price": "15", "count": "1"}
+                        ],
+                "tax": "11.7",
+                "tip": "10",
+                "partner": "DoorDash",
+                "time": "10:01:14"
+            }
+        ]
+    }
+    
+    const res2Data = {
+      title: {
+        "restaurant": "Pizza Pizza 2", 
+      },
+      orders: [
+            {
+                "orderNum": "1",
+                "date": "5 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"},
+                            {"name": "Small Hawaiian", "price": "18", "count": "2"}
+                        ],
+                "tax": "16.2",
+                "tip": "15",
+                "partner": "Uber Eat",
+                "time": "11:02:00"
+            },
+            {
+                "orderNum": "2",
+                "date": "5 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+                "tax": "7.5",
+                "tip": "0",
+                "partner": "Uber Eat",
+                "time": "12:05:55"
+            }
+        ]
+    }
+    
+    const res3Data = {
+      title: {
+        "restaurant": "Pizza Pizza 3", 
+      },
+      orders: [
+            {
+                "orderNum": "1",
+                "date": "2 Feb, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+                "tax": "7.5",
+                "tip": "0",
+                "partner": "Uber Eat",
+                "time": "12:05:55"
+            },
+            {
+                "orderNum": "2",
+                "date": "4 March, 2022",
+                "dishes": [{"name": "Small Pepperoni", "price": "25", "count": "3"}],
+                "tax": "7.5",
+                "tip": "0",
+                "partner": "Uber Eat",
+                "time": "12:05:55"
+            }
+        ]
+    }       </code>
+      </pre>
+        <p>In the script, construct the two list of report objects and their corresponding ids to present in DOM, namely resData and ids.</p>
+        <p>Note that the generated Multi-restaurant reports also capable of any functionalities described above for single report. In this example, two edit information for report 1 and report 2 are called and reflected correctly</p>
+        <div class="container py-5">
+            <div class="px-5 bg-white rounded">
+              <ul id="myTab" role="tablist" class="nav nav-tabs flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                <li class="nav-item flex-sm-fill js">
+                  <a id="js-tab11" data-toggle="tab" href="#JavaScript11" role="tab" aria-controls="JavaScript10" aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">JavaScript</a>
+                </li>
+                <li class="nav-item flex-sm-fill html">
+                  <a id="html-tab11" data-toggle="tab" href="#HTML11" role="tab" aria-controls="HTML11" aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">HTML</a>
+                </li>
+                
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div id="HTML11" role="tabpanel" aria-labelledby="html-tab11" class="tab-pane fade px-4">
+                    <pre>
+                        <code>
+    <span class="red"><</span>div id=<span class="green">"example12"</span><span class="red">></span>
+    <span class="red"><</span>/div<span class="red">></span>
+                        </code>
+                        
+                    </pre>
+                </div>
+                <div id="JavaScript11" role="tabpanel" aria-labelledby="js-tab11" class="tab-pane fade px-4 show active">
+                    <pre>
+                        <code>
+    const resData = [res1Data, res2Data, res3Data];
+    const ids = ["report1", "report2", "report3"]
+    f.multiResReport(resData, ids, "example12");
+
+    const editInfo = ["order", 1, ["partner", "Skip The Dishes"]]
+    f.editReportDetail("report1", editInfo);
+
+    const editInfo2 = ["order", 2, ["tip", "10.00"]]
+    f.editReportDetail("report2", editInfo2);
+
+    </code>
+                        
+                    </pre>
+                </div>
+                
+              </div>
+              <button class="button btn btn-light" id="ex11b" onclick="showEx11()">Run Code</button>
+            </div>
+          </div>
+        
+        <div id="example12">
+
         </div>
 
         </div>

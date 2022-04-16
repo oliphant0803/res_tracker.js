@@ -1435,6 +1435,59 @@
                 dishes.set(dish["name"], [dish["price"], dish["count"]])
             })
             return generateDishSum(partners, dishes, id, filter, sort);
+        },
+
+        multiResReport: function(data, ids, parentId){
+
+            //add tabs nav
+            const parent = document.getElementById(parentId);
+            let nav = document.createElement("nav");
+            nav.classList.add("tab");
+            let j = 1;
+            data.forEach(resData => {
+                let btn = document.createElement("button");
+                btn.classList.add("subnavBtn");
+                if(j==1){
+                    btn.classList.add("active-btn");
+                }
+                btn.setAttribute("data-tab", j);
+                j += 1;
+                btn.innerHTML = resData.title["restaurant"]
+                nav.appendChild(btn);
+            });
+            parent.appendChild(nav);
+
+            //add tab div
+            for(let k = 1; k<= data.length; k++){
+                let div = document.createElement("div");
+                div.setAttribute("data-tab", k);
+                div.setAttribute("id", ids[k-1]+"Con");
+                div.classList.add("subnavDiv");
+                if(k==1){
+                    div.classList.add("active");
+                }
+                parent.appendChild(div);
+            }
+
+            const buttons = document.querySelectorAll('.subnavBtn');
+            const divs = document.querySelectorAll('.subnavDiv');
+            const handleClick = e => {
+                e.preventDefault();
+                
+                buttons.forEach(node => node.classList.remove('active-btn'));
+                e.currentTarget.classList.add('active-btn');
+            
+                divs.forEach(node => node.classList.remove('active'));
+                [...divs].filter(div => div.dataset.tab === e.currentTarget.dataset.tab)[0].classList.add('active');
+            }
+                
+            buttons.forEach(node => node.addEventListener('click', handleClick));
+            let i = 0;
+            divs.forEach(node => {
+                const table = f.generateReport(data[i], ids[i], true);
+                document.getElementById(node.id).appendChild(table);
+                i+=1;
+            });
         }
 
 	}

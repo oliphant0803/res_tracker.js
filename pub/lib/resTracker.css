@@ -235,3 +235,31 @@ select optgroup{
   font-weight: 600;
   margin-left: 1rem;
 }
+
+.subnavDiv { 
+  display: none; 
+}
+
+.active { 
+  display: block; 
+}
+
+.active-btn{
+  background-color: antiquewhite;
+}
+
+.subnavBtn{
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+}
+
+.tab{
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto
+}
