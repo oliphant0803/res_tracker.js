@@ -93,6 +93,9 @@
           <li>
             <a href="#exportReport">exportReport</a>
           </li>
+          <li>
+            <a href="#multiResReport">multiResReport</a>
+          </li>
 
         </ul>
 
@@ -943,6 +946,81 @@
               if the user input objectType is dish, then the generated dish summary would need 3 more paramters for DOM representation. 
               <br>(e.g. ["dish1", true, true])
               <br> where "dish1" is the summary id, and two boolean expression indicating the summary has sort and filter functionalities, respectively.
+             </div>
+
+        </div>
+
+        <div class="line">
+          </div>
+
+
+
+        <h2 id="multiResReport">multiResReport(data, ids, parentId)</h2>
+        <p>
+          multiResReport: function(data, ids, parentId) allows developers to arrange multiple reports for different restaurants together for Multi-restaurant owners to view, modify, and analyze all the reports at once.
+          each report objects are all capable of the basic functionalities such as export each report to dish summary, different types of charts, as well as adding, removing orders and other modifications as described in previous functions.
+        </p>
+        <div class="row table-head">
+          <div class="col-md-2">
+               Property
+          </div>
+          <div class="col-md-2">
+              Default
+          </div>
+            <div class="col-md-2">
+             Type
+            </div>
+            <div class="col-md-6">
+              Description
+             </div>
+        </div>
+        
+        <div class="row table-striped">
+          <div class="col-md-2">
+              data
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+             List of report objects
+            </div>
+            <div class="col-md-6">
+              list of reporting objects where each report object contains the information of report details, which can be customized from user's input
+              <pre  class="shadow rounded">
+                <code>[Report Object]
+                </code>
+              </pre>
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              ids
+          </div>
+          <div class="col-md-2">
+            /
+          </div>
+            <div class="col-md-2">
+              List of String
+            </div>
+            <div class="col-md-6">
+              ids contains a list of strings that each represents the id of the generated report, the length of ids should match the length of data
+             </div>
+        </div>
+        <div class="linet"></div>
+        <div class="row table-striped">
+          <div class="col-md-2">
+              parentId
+          </div>
+          <div class="col-md-2">
+              /
+          </div>
+            <div class="col-md-2">
+              String
+            </div>
+            <div class="col-md-6">
+              parentId contains a String id that developer wish to append to and manipulate in DOM.
              </div>
 
         </div>
